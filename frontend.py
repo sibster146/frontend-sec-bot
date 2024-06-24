@@ -25,12 +25,12 @@ if prompt := st.chat_input("What is up?"):
     full_url = f"{base_url}?{encoded_params}"
     with st.chat_message("assistant"):
         stream = requests.get(full_url, stream=True)
-        complete_response_list = []
+        complete_text_list = []
         for chunk in stream.iter_content(chunk_size=1024):
             if chunk:
-                response_text = chunk.decode('utf-8').replace("\\n","\n").replace("\\'","'")
-                st.markdown(response_text)
-                complete_response_list.append(response_text)
-    complete_response_string = "".join(complete_response_list)
-    st.session_state.messages.append({"role":"assistant","content":complete_response_string})
+                text = chunk.decode('utf-8').replace("\\n","\n").replace("\\'","'")
+                st.markdown(text)
+                complete_text_list.append(rtext)
+    complete_text_string = "".join(complete_text_list)
+    st.session_state.messages.append({"role":"assistant","content":complete_text_string})
 
