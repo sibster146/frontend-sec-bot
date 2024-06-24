@@ -30,7 +30,7 @@ if prompt := st.chat_input("What is up?"):
             if chunk:
                 text = chunk.decode('utf-8').replace("\\n","\n").replace("\\'","'")
                 st.markdown(text)
-                complete_text_list.append(rtext)
+                complete_text_list.append(text)
     complete_text_string = "".join(complete_text_list)
     st.session_state.messages.append({"role":"assistant","content":complete_text_string})
 
