@@ -33,3 +33,5 @@ if prompt := st.chat_input("What is up?"):
                 complete_text_list.append(text)
     complete_text_string = "".join(complete_text_list)
     st.session_state.messages.append({"role": "assistant", "content": complete_text_string})
+
+# https://frontend-sec-bot-rmdsnhyfgevmsb2beohlhh.streamlit.app/
